@@ -1,0 +1,34 @@
+
+.ui.menu{
+    border-radius: 0px;
+    margin-bottom: 0px;;
+}
+.barr_user{
+    background-color: #E5E5E5;
+    width: 100%;
+    height: 50Px;
+}
+
+
+.display_username{
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+.h_inscription{
+    width: 120px;
+    margin-top: -15px;
+    margin-left:20px;
+    position: relative;
+    background-color: white;
+    text-align: center;
+}
+
+
+.content_back{
+    background-color: #FAFAFA !important;
+    box-shadow: 8px 8px 12px #aaa , 8px 8px 12px black,-0.1em 0 .2em black  !important;
+}
+
+
+

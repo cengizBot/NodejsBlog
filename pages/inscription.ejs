@@ -1,0 +1,100 @@
+<%- include('header.ejs') %>
+
+<% if (locals.flash && locals.flash.error) { %>
+    <div style="width: 50%;margin: 0 auto;" class="ui negative message">
+       <img style="float: left;" src="/warning.png">&nbsp;&nbsp; <%- flash.error %>
+    </div>
+
+<% } %>
+
+<% if (locals.flash && locals.flash.success) { %>
+    <div style="width: 50%;margin: 0 auto;" class="ui positive message">
+        <%- flash.success %>
+    </div>
+
+<% } %>
+
+
+<div class="ui fluid card" style="width: 50%;margin: 0 auto;margin-top: 50px;">
+    
+    <div class="h_inscription">
+        <h3 >Inscription</h3>
+    </div>
+    <div class="content">
+        <br/><br/>
+        <form class="ui form" action="/inscription" method="POST">
+            <div class="field">
+              <label>Email</label>
+              <input type="text" name="username" placeholder="username">
+              <% if ( locals.error_tab) { %>
+                <% for( var i = 0; i < error_tab.length; i ++ ) { %>
+                    <% if ( error_tab[i][0] === "email") { %>
+                        <small style="color: red;">
+                            <%- error_tab[i][1] %>
+                        </small>
+                    <% } %>
+                <% } %>
+              <% } %>
+            </div>
+
+            <div class="field">
+                <label>Prénom</label>
+                <input type="text" name="firstname" placeholder="Prenom">
+                <% if ( locals.error_tab) { %>
+                    <% for( var i = 0; i < error_tab.length; i ++ ) { %>
+                        <% if ( error_tab[i][0] === "firstname") { %>
+                        <small style="color: red;">
+                            <%- error_tab[i][1] %>
+                        </small>
+                        <% } %>
+                    <% } %>
+                <% } %>
+              </div>
+              <div class="field">
+                <label>Nom</label>
+                <input type="text" name="lastname" placeholder="Nom">
+                <% if ( locals.error_tab) { %>
+                    <% for( var i = 0; i < error_tab.length; i ++ ) { %>
+                        <% if ( error_tab[i][0] === "lastname") { %>
+                        <small style="color: red;">
+                            <%- error_tab[i][1] %>
+                        </small>
+                        <% } %>
+                    <% } %>
+                <% } %>
+            </div>
+            
+            <div class="field">
+                <label>Mot de passe</label>
+                <input type="password" name="password" placeholder="Mot de passe">
+                <% if ( locals.error_tab) { %>
+                    <% for( var i = 0; i < error_tab.length; i ++ ) { %>
+                        <% if ( error_tab[i][0] === "password") { %>
+                        <small style="color: red;">
+                            <%- error_tab[i][1] %>
+                        </small>
+                        <% } %>
+                    <% } %>
+                <% } %>
+            </div>
+            <div class="field">
+                <label>Verification mot de passe</label>
+                <input type="password" name="verifpassword" placeholder="Verification du mot de passe">
+                <% if ( locals.error_tab) { %>
+                    <% for( var i = 0; i < error_tab.length; i ++ ) { %>
+                        <% if ( error_tab[i][0] === "verifpassword") { %>
+                        <small style="color: red;">
+                            <%- error_tab[i][1] %>
+                        </small>
+                        <% } %>
+                    <% } %>
+                <% } %>
+            </div>
+            <button style="background-color: #859FCB;width: 100%;" class="ui button" type="submit">Inscription</button>
+        </form>
+    </div>
+</div>
+
+
+
+<%- include('footer.ejs') %>

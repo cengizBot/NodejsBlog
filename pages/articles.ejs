@@ -1,0 +1,38 @@
+<%- include('header.ejs') %>
+
+<div class="ui sizer vertical segment content_back">
+    <div style="margin-left:10px;" class="ui huge header"><font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Bienvenue sur les Articles</font></font>
+    </div>
+<br/>
+
+
+<div style="margin-left:10px;" class="ui items">
+    <% for (article of articles) { %>
+   
+        <div class="item">  
+            <div class="image">
+                <img width="150px" src="kremlin.jpg">
+            </div>
+            <div class="content">
+                <a href="/article/<%= article.id %>" class="header"><font style="vertical-align: inherit;">Titre : <%= article.title %></font></a><br/>
+                <small><%= article.date %> min</small>
+                <div class="meta">
+                <span><font style="vertical-align: inherit;">Contenu</font></span>
+                </div>
+                <div class="description">
+                <p></p>
+                </div>
+                <div class="extra"><font style="vertical-align: inherit;">
+                    <div style="width: 90%;word-wrap : break-word;text-align: justify;">
+                      <%= article.content %>
+                    </div>
+                </font></div>
+            </div>
+        </div>
+  
+    <% } %>
+</div>
+
+
+<%- include('footer.ejs') %>

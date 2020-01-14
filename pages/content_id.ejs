@@ -1,0 +1,18 @@
+<%- include('header.ejs') %>
+
+
+
+<h1><%- message.date %></h1>
+<h1><%- message.content %></h1>
+
+
+<% if(locals.autoriser) { %>
+    <a href="delete/<%= message.id %>" type="button" id="delete" class="ui secondary button">
+        Delete
+    </a>
+<% } %>
+
+
+
+
+<%- include('footer.ejs') %>

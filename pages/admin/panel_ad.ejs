@@ -1,0 +1,60 @@
+<%- include('../admin.ejs') %>
+<div class="ui main container">
+
+    <% if (locals.success) { %>
+        <div class="ui positive message">
+            <%- locals.success %>
+        </div>
+    
+    <% } %>
+
+    <% if (locals.error) { %>
+        <div class="ui negative message">
+            <%- locals.error %>
+        </div>
+    
+    <% } %>
+    
+
+    <h1 class="ui header"><font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Panel </font></font></h1>
+
+        
+<div style="margin-left:10px;" class="ui items">
+    <% for (article of articles) { %>
+   
+        <div class="item">  
+            <div class="image">
+                <img width="100px" src="<%= article.picture %>">
+            </div>
+            <div class="content">
+                <a href="/article/<%= article.id %>" class="header"><font style="vertical-align: inherit;">Titre : <%= article.title %></font></a><br/>
+                <small><%= article.date %> min</small>
+
+                <a href='/admin/panel_ad/delete/<%= article.id %>' style="float: right;background-color:#DC0303;color:white" class="ui button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    DELETE
+                </font></font></a>
+                <a href='/admin/panel_ad/update/<%= article.id %>' style="float: right;background-color:rgb(25, 3, 220);color:white" class="ui button"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                    Update
+                </font></font></a>
+
+                <div class="meta">
+                <span><font style="vertical-align: inherit;">Contenu</font></span>
+                </div>
+                <div class="description">
+                <p></p>
+                </div>
+                <div class="extra"><font style="vertical-align: inherit;">
+                    <div style="width: 600px;word-wrap : break-word; ">
+                      <%= article.content %>
+                    </div>
+                </font></div>
+            </div>
+        </div>
+  
+    <% } %>
+</div>
+
+</div>
+
+

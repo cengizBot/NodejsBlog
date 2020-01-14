@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/semantic.min.css" />
+        <link rel="stylesheet" type="text/css" href="/css.css" />
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <style>
+            .main.container{
+                margin-top: 100px;
+            }
+        </style>
+    </head>
+    <body>
+
+        
+        <div class="ui fix inverted menu">
+            <a href='/' class="header item" >Accueil</a>
+            <a href='/login' class="header item" >Login</a>
+            <a href='/admin' class="header item" >Admin</a>
+            <a href='/inscription' class="header item" >Inscription</a>
+            <a href='/logout' class="header item" >Déconnexion</a>
+        </div>
+
+        <div class="barr_user">
+            <% if (locals.decoded) { %>
+                <img style="width:20px;margin-top: 5px;float: left;margin-top:12px;margin-left: 10px;" src="/user.png">
+                <p style="padding-left: 35px;" class="display_username">Bienvenue ,  <%- locals.decoded %> </p>
+    
+            <% } %>
+            <% if (!locals.decoded) { %>
+               <p class="display_username" >Bonjour, connectez-vous</p>
+            <% } %>
+
+        </div>
+
+        <div class="ui main container">
+
+            
+        

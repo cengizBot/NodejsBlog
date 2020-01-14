@@ -1,0 +1,99 @@
+<%- include('../admin.ejs') %>
+<div class="ui main container">
+    <h1 class="ui header">
+        
+    <% if (locals.update_article) { %>
+        <font style="vertical-align: inherit;">Update d'article </font>
+    <% } else { %>
+        <font style="vertical-align: inherit;">Création d'article </font>
+    <% } %>
+
+    </h1>
+
+    <% if (locals.error_tab) { %>
+        <div class="ui negative message">
+        <% for( var i = 0; i < error_tab.length; i ++ ) { %>
+                    <p style="color: red;">
+                        <%- error_tab[i][0] %> :  <%- error_tab[i][1] %>
+                    </p>
+                
+        <% } %>
+        </div>
+    <% } %>
+
+    <!-- <% if (locals.error) { %>
+        <div class="ui negative message">
+            <%- locals.error %>
+        </div>
+    
+    <% } %> -->
+
+    <% if (locals.flash && locals.flash.success) { %>
+        <div class="ui positive message">
+            <%- flash.success %>
+        </div>
+    
+    <% } %>
+
+
+     
+
+            <% if (locals.update_article) { %>
+
+                
+             <form class="ui form" action="/admin/update_article" method="post">
+
+                <div class="field">
+                    <label>Title</label>
+                    <input value="<%= msg.title %>" type="text" name="title" placeholder="Title">
+                </div>
+            
+                <div class="field">
+                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Content</font></font></label>
+                    <textarea name="message" ><%= msg.content %></textarea>
+  
+                </div>
+                <br/>      
+                <br/>
+            
+                <button type="submit" class="ui blue labeled submit icon button" >
+                    <i class="icon edit"></i>Update
+                </button>
+            <% }else { %>
+
+                
+                <form class="ui form" action="/admin/create_article" method="post">
+
+                <div class="field">
+                    <label>Title</label>
+                    <input  type="text" name="title" placeholder="Title">
+                </div>
+
+                <div class="field">
+                    <label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Content</font></font></label>
+                    <textarea name="message" ></textarea>
+                </div>  
+                <br/>      
+                <br/>
+                <button type="submit" class="ui blue labeled submit icon button" >
+                    <i class="icon edit"></i>Envoyer
+                </button>
+            <% } %>
+             
+
+
+        </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

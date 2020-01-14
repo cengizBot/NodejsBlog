@@ -1,0 +1,38 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
+  "author": "Kurt Cengiz",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "cookie-parser": "^1.4.4",
+    "date-format": "^3.0.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-flash-messages": "^0.1.1",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.3.1",
+    "jquery": "^3.4.1",
+    "jsdom": "^15.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
+    "mysql": "^2.17.1",
+    "node-serialize": "0.0.4",
+    "nodeQuery": "0.0.9-1",
+    "nodemon": "^2.0.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  },
+  "engines": {
+    "node": "10.16.3"
+  }
+}

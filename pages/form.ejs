@@ -1,0 +1,67 @@
+<%- include('header.ejs') %>
+
+
+<h1><%- article.title %></h1>
+<p><%- article.date %> min</p>
+<img style="width: 99%;" src="/run.jpg"><br/><br/>
+<div>
+    <p style="letter-spacing: .2rem;"><%- article.content %></p>
+</div>
+
+<% if (locals.flash && locals.flash.success) { %>
+    <div class="ui positive message">
+        <%- flash.success %>
+    </div>
+
+<% } %>
+
+
+<% if (locals.flash && locals.flash.error) { %>
+    <div class="ui negative message">
+        <%- flash.error %>
+    </div>
+
+<% } %>
+
+
+<form action="/article/<%- article.id %>" method="post" class="ui form" style="margin-top: 20px;">
+    <div class="field">
+        <label for="message">Message</label>
+        <textarea name="message" id="message"></textarea>
+    </div>
+    <button type="submit" class="ui blue labeled submit icon button" >
+        <i class="icon edit"></i>Envoyer
+    </button>
+</form>
+
+
+<div class="ui comments">
+    <h3 class="ui dividing header">
+        Commentaires
+    </h3>
+
+    <% for (message of messages) { %>
+
+        <div class="comment">
+            <a class="avatar" href="content/<%= message.id %>">
+                <img style="width:50px;" src="/user.png">
+            </a>
+            <div class="content" style="margin-left: 5em">               
+                <div class="metadata">
+                    <%= message.date %>
+                </div>
+                <div class="test" style="margin-left: 0.5em;font-weight: bold;" ><%= message.email %> :</div>
+                <div class="test" style="margin-left: 0.5em;margin-top:2px" ><%= message.content %></div>
+            </div>
+        </div>
+        <br/><br/>
+
+    <% } %>
+
+
+</div>
+
+
+
+
+<%- include('footer.ejs') %>

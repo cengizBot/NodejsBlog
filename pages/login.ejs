@@ -1,0 +1,50 @@
+
+<%- include('header.ejs') %>
+
+
+
+<div class="page-login">
+    <div class="ui centered grid container">
+      <div class="nine wide column">
+
+        <% if (locals.flash && locals.flash.error) { %>
+
+            <div class="ui icon warning message">
+                <i class="lock icon"></i>
+                <div class="content">
+                <div class="header">
+                    Login failed!
+                </div>
+                <p><%- flash.error %></p>
+                </div>
+            </div>
+
+        <% } %>
+
+        <div class="ui fluid card">
+          <div class="content">
+            <form class="ui form" action="/login" method="POST">
+            <div class="field">
+              <label>username</label>
+              <input type="text" name="username" placeholder="Email">
+            </div>
+            <div class="field">
+              <label>Password</label>
+              <input type="password" name="password" placeholder="Password">
+            </div>
+            <button class="ui primary labeled icon button" type="submit">
+              <i class="unlock alternate icon"></i>
+              Connection
+            </button>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<%- include('footer.ejs') %>

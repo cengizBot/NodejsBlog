@@ -13,7 +13,7 @@
   "author": "Kurt Cengiz",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.7",
+    "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.4",
     "date-format": "^3.0.0",
     "ejs": "^3.0.1",
